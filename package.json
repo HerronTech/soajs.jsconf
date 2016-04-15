@@ -1,6 +1,6 @@
 {
-  "name": "soajs.jsconfbeirut",
-  "description": "Demo service for JSConf Beirut",
+  "name": "soajs.jsconf",
+  "description": "Demo service for JSConf",
   "version": "0.0.1",
   "author": {
     "name": "soajs team",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:soajs/soajs.jsconfbeirut.git"
+    "url": "git@github.com:soajs/soajs.jsconf.git"
   },
   "license": "Apache-2.0",
   "scripts": {
@@ -18,7 +18,7 @@
     "node": "*"
   },
   "dependencies": {
-    "soajs": "git+https://github.com/soajs/soajs.git#develop"
+    "soajs": "0.3.*"
   },
   "devDependencies": {
   }
