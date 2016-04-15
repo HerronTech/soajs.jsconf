@@ -1,0 +1,139 @@
+form .label {
+    background-color: #f8f8f8;
+    color: black;
+}
+
+form .actions input {
+    margin-right: 5px;
+}
+
+form tr label {
+    margin-top: 15px;
+}
+
+form .header, form .modal-header {
+}
+
+form .header h3,
+form .modal-header h3 {
+    margin: 0;
+}
+form .modal-header {
+    position: relative;
+}
+.modal-header .closeButton{
+    text-align: right;
+}
+.modal-header .closeButton a{
+    color: #ff6c00;
+}
+
+/*
+form .ng-dirty.ng-invalid{
+    border-color:red;
+}
+form .submittedForm .ng-dirty.ng-valid{
+    border-color:green;
+}
+*/
+form .footer{
+    text-align: right;
+}
+
+form .header h3{
+	padding: 15px;
+}
+
+form .btn-sm{
+	margin-left:5px;	
+}
+
+.grouped .form-control{
+    width: 70%;
+    min-width: 725px;
+    display: inline;
+}
+
+form input[type='file']{
+    padding:0;
+    border:none;
+    box-shadow:none;
+    border-radius:0px;
+    margin-bottom:8px;
+    width:auto;
+}
+
+form .file-actions{
+    margin-top:6px;
+}
+
+form .file-actions2{
+    margin-top:15px;
+}
+
+form .file-actions3{
+    margin-top:2px;
+}
+
+form .file-even,
+form .file-odd{
+    border-bottom:solid 1px #e5e5e5;
+}
+
+.modal-body .form-control{
+    display: inline;
+}
+
+.modal-body label{
+    color: #464543;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 0;
+}
+.modal-body {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 0;
+}
+
+.form-control{
+    background-color: #F6F5F0;
+    border-color: #7F7E7A;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 15px 25px 40px 25px;
+    text-align: right;
+}
+input.orangeBorderLink{
+    padding-top: 0;
+    padding-right: 25px;
+    padding-left: 25px;
+    background-color: white;
+}
+
+form .submittedForm .ng-invalid{
+    border-color:red;
+}
+
+.modalBackButton{
+    float: left;
+    padding-top: 10px;
+}
+
+.modal-content input.orangeBorderLink{
+    width: 100%;
+}
+
+#addCCnumber .header-msg{
+
+}
+.css-form .note{
+    margin-bottom: 6px;
+    text-align: left;
+}
