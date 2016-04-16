@@ -9,8 +9,8 @@ var index = 0;
 })();
 
 /* App Module */
-var mkplApp = angular.module('mkplApp', ['ui.bootstrap', 'ngRoute', 'ngCookies', 'ngStorage', 'ngSanitize']);
-mkplApp.config([
+var jsConfApp = angular.module('jsConfApp', ['ui.bootstrap', 'ngRoute', 'ngCookies', 'ngStorage', 'ngSanitize']);
+jsConfApp.config([
 	'$routeProvider',
 	'$controllerProvider',
 	'$compileProvider',
@@ -18,7 +18,7 @@ mkplApp.config([
 	'$provide',
 	'$sceDelegateProvider',
 	function ($routeProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $sceDelegateProvider) {
-		mkplApp.compileProvider = $compileProvider;
+		jsConfApp.compileProvider = $compileProvider;
 
 		var whitelisted = ['self'];
 		whitelisted = whitelisted.concat(whitelistedDomain);
@@ -52,7 +52,7 @@ mkplApp.config([
 			redirectTo: navigation[0].url.replace('#', '')
 		});
 
-		mkplApp.components = {
+		jsConfApp.components = {
 			controller: $controllerProvider.register,
 			service: $provide.service
 		};
@@ -60,7 +60,7 @@ mkplApp.config([
 	}
 ]);
 
-mkplApp.controller('mkplAppController', ['$scope', '$location', '$timeout', '$route', '$cookies', '$cookieStore', 'ngDataApi', '$localStorage', '$routeParams',
+jsConfApp.controller('jsConfAppController', ['$scope', '$location', '$timeout', '$route', '$cookies', '$cookieStore', 'ngDataApi', '$localStorage', '$routeParams',
 	function ($scope, $location, $timeout, $route, $cookies, $cookieStore, ngDataApi, $localStorage, $routeParams) {
 		$scope.enableInterface = false;
 		$scope.currentLocation = '';
@@ -135,35 +135,35 @@ mkplApp.controller('mkplAppController', ['$scope', '$location', '$timeout', '$ro
 
 
 
-mkplApp.directive('overlay', function () {
+jsConfApp.directive('overlay', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'themes/' + themeToUse + '/directives/overlay.tmpl'
 	};
 });
 
-mkplApp.directive('header', function () {
+jsConfApp.directive('header', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'themes/' + themeToUse + '/directives/header.tmpl'
 	};
 });
 
-mkplApp.directive('content', function () {
+jsConfApp.directive('content', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'themes/' + themeToUse + '/directives/content.tmpl'
 	};
 });
 
-mkplApp.directive('footer', function () {
+jsConfApp.directive('footer', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'themes/' + themeToUse + '/directives/footer.tmpl'
 	};
 });
 
-mkplApp.directive('productBlock', function () {
+jsConfApp.directive('productBlock', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'themes/' + themeToUse + '/directives/productBlock.tmpl'
@@ -171,7 +171,7 @@ mkplApp.directive('productBlock', function () {
 });
 
 
-mkplApp.directive('ngConfirmClick', [
+jsConfApp.directive('ngConfirmClick', [
 	function () {
 		return {
 			priority: -1,

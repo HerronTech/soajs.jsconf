@@ -232,7 +232,7 @@ function buildForm(context, modal, configuration, cb) {
 
 }
 
-mkplApp.directive('ngform', function () {
+jsConfApp.directive('ngform', function () {
 	return {
 		restrict: 'E',
 		templateUrl: 'lib/form/form.tmpl'

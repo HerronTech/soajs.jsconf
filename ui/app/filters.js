@@ -1,6 +1,6 @@
 "use strict";
 
-mkplApp.filter('fulldate', function () {
+jsConfApp.filter('fulldate', function () {
 	return function (text) {
 		if (!text) {
 			return '';
@@ -9,13 +9,13 @@ mkplApp.filter('fulldate', function () {
 	};
 });
 
-mkplApp.filter('toTrustedHtml', ['$sce', function ($sce) {
+jsConfApp.filter('toTrustedHtml', ['$sce', function ($sce) {
 	return function (text) {
 		return $sce.trustAsHtml(text);
 	};
 }]);
 
-mkplApp.filter('trimmed', function () {
+jsConfApp.filter('trimmed', function () {
 	function hed(text) {
 		if (!text) {
 			return "";

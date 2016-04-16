@@ -1,28 +1,35 @@
 "use strict";
-var homepageApp = mkplApp.components;
+var homepageApp = jsConfApp.components;
 
-homepageApp.controller('homepageCtrl', ['$scope', 'ngDataApi', function ($scope, ngDataApi) {
+homepageApp.controller('homepageCtrl', ['$scope', 'homepageSrv', function ($scope, homepageSrv) {
 
 	$scope.message = "";
 
-	$scope.getInfo = function () {
-
-		getSendDataFromServer($scope, ngDataApi, {
-			'method': 'get',
-			'routeName': '/jsconfadvanced/getInfo',
-			'params': {
-				'email': $scope.email.address
-			}
-		}, function (error, response) {
-
-			if (error) {
-				$scope.$parent.displayAlert('danger', error.message);
-			} else {
-				$scope.message = response.data;
-			}
-		});
+	$scope.getInfo = function (formData) {
+		//call service & connect to cloud
+		homepageSrv.connect($scope, formData);
 	};
 
-	console.log(JSON.stringify(myConfig, null, 2));
+	$scope.initHomepage = function(){
+		var form = {
+			name: 'addEnvironment',
+			// label: $scope.translate.form[LANG],
+			entries: homepageConfig.form,
+			actions: [
+				{
+					'type': 'submit',
+					'label': $scope.translate.submit[LANG],
+					'btn': 'primary',
+					'action': function (formData) {
+						$scope.getInfo(formData);
+					}
+				}
+			]
+		};
+
+		buildForm($scope, null, form);
+	};
+
+	$scope.initHomepage();
 }]);
 

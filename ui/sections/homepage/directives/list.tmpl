@@ -1,16 +1,18 @@
 <div id="page-home">
 	<div class="container-main-width homepage">
 		<div ng-controller="homepageCtrl" class="home-ListProducts">
-			<div ng-show="message.length === 0" ng-style="{'padding-left': '33%'}"> <!--email entry form-->
-				<input type="text" name="email" ng-model="email.address" class="form-control" ng-style="{'width': '40%', 'float': 'left', 'margin-right': '10px'}" placeholder="Enter email address"/>
-				<a href="" class="btn btn-primary" ng-click="getInfo()">Click Me</a>
-			</div>
-
-			<div ng-show="message.length > 0"> <!--message-->
+			<div class="c-both">
 				<img ng-src="./sections/homepage/logos/soajs_logo.png" class="float: left;">
 				<img ng-src="./sections/homepage/logos/jsconf_logo.png" class="f-right" width="10%" height="10%">
-				<br><br><br><br>
-				<span ng-style="{'text-align': 'center'}" ng-bind-html="message"></span>
+			</div>
+			<br><br><br><br>
+
+			<div ng-hide="message !== ''">
+				<ngForm></ngForm>
+			</div>
+
+			<div ng-show="message !== ''">
+				<span ng-style="{'text-align': 'center'}">Hello {{message}}</span>
 				<br><br>
 			</div>
 

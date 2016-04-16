@@ -1,6 +1,6 @@
 "use strict";
 
-mkplApp.service('ngDataApi', ['$http', '$cookies', '$cookieStore', '$localStorage', function ($http, $cookies, $cookieStore, $localStorage) {
+jsConfApp.service('ngDataApi', ['$http', '$cookies', '$cookieStore', '$localStorage', function ($http, $cookies, $cookieStore, $localStorage) {
 
 	function returnAPIError(scope, opts, status, headers, config, cb) {
 		console.log("Error: ngDataApi->" + opts.api);
@@ -97,7 +97,7 @@ mkplApp.service('ngDataApi', ['$http', '$cookies', '$cookieStore', '$localStorag
 }]);
 
 
-mkplApp.service("injectFiles", function () {
+jsConfApp.service("injectFiles", function () {
 
 	function injectCss(filePath) {
 		var csstag = "<link rel='stylesheet' type='text/css' href='" + filePath + "' />";

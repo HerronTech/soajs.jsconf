@@ -44,7 +44,7 @@ jsconfSRV.init(function () {
 		});
 	});
 
-	jsconfSRV.post("/multi/addInfo", [
+	jsconfSRV.post("/multi/add", [
 		function (req, res, next) {
 			/**
 			 * Initializing DB Connection
@@ -85,7 +85,7 @@ jsconfSRV.init(function () {
 	jsconfSRV.get("/hybrid", function (req, res) {
 
 		var data;
-		var tenantConfig = req.soajs.servicesConfig.style;
+		var tenantConfig = req.soajs.servicesConfig;
 		switch(tenantConfig.style){
 			case 'simple':
 				data = "Hello i am a message!";
@@ -94,8 +94,9 @@ jsconfSRV.init(function () {
 				data = tenantConfig.obj.name.replace("%name%", req.soajs.inputmaskData.name);
 				break;
 			case 'imfv':
-				data = tenantConfig.obj.name.replace("%name%", req.soajs.inputmaskData.name);
-				data = tenantConfig.obj.email.replace("%email%", req.soajs.inputmaskData.name);
+				data = {};
+				data.name = tenantConfig.obj.name.replace("%name%", req.soajs.inputmaskData.name);
+				data.email = tenantConfig.obj.email.replace("%email%", req.soajs.inputmaskData.name);
 				break;
 		}
 

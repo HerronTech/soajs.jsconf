@@ -8,7 +8,7 @@ var navigation = [
 		'url': '#/',
 		'title': 'Home',
 		'tplPath': 'sections/homepage/directives/list.tmpl',
-		'scripts': ['sections/homepage/config.js', 'sections/homepage/controller.js'],
+		'scripts': ['sections/homepage/config.js', 'sections/homepage/controller.js', 'sections/homepage/service.js'],
 		'mainMenu': true,
 		'tracker': true
 	}
