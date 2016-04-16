@@ -1,0 +1,93 @@
+{
+	"id": "b98980be-39c1-f741-3dba-742a3c8e9028",
+	"name": "jsconf s3",
+	"description": "",
+	"order": [
+		"86a6b142-36e9-1497-757e-732568c259bf",
+		"7ee36e58-5341-d3cc-588a-22db141d43e7",
+		"9fa0d694-1865-b560-6d39-a3d34a93961d"
+	],
+	"folders": [],
+	"timestamp": 1460801343350,
+	"owner": 0,
+	"remoteLink": "",
+	"public": false,
+	"requests": [
+		{
+			"id": "7ee36e58-5341-d3cc-588a-22db141d43e7",
+			"headers": "key: 4f9b4dbc4c8178a3983b8c0d42cd42d39058b38d2cf2523c3aaa302678d943def8e02a64df236a53632fd8e16f9ff9cc3bc7609f48b7be693fae9b38bf29eae6527809a2bca0bd0fd7cb098488113107221e5c8f49aaecafb5db1713142d7210\nAuthorization: Basic NTcxMjAxMTAxZWJmMzQwNDFjMGIwNjI3b2F1dGhzZWNyZXQ=\n",
+			"url": "http://dev-api.mydomain.com/oauth/token",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "POST",
+			"data": [
+				{
+					"key": "username",
+					"value": "myuser",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "password",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				},
+				{
+					"key": "grant_type",
+					"value": "password",
+					"type": "text",
+					"enabled": true
+				}
+			],
+			"dataMode": "urlencoded",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460803276415,
+			"name": "Login oAuth - Tenant 2",
+			"description": "",
+			"collectionId": "b98980be-39c1-f741-3dba-742a3c8e9028",
+			"responses": []
+		},
+		{
+			"id": "86a6b142-36e9-1497-757e-732568c259bf",
+			"headers": "key: 4f9b4dbc4c8178a3983b8c0d42cd42d39058b38d2cf2523c3aaa302678d943def8e02a64df236a53632fd8e16f9ff9cc3bc7609f48b7be693fae9b38bf29eae6527809a2bca0bd0fd7cb098488113107221e5c8f49aaecafb5db1713142d7210\n",
+			"url": "http://dev-api.mydomain.com/jsconf3/hello?email=team@soajs.org",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460801935880,
+			"name": "Fail s2 - Tenant 2",
+			"description": "",
+			"collectionId": "b98980be-39c1-f741-3dba-742a3c8e9028",
+			"responses": []
+		},
+		{
+			"id": "9fa0d694-1865-b560-6d39-a3d34a93961d",
+			"headers": "key: 4f9b4dbc4c8178a3983b8c0d42cd42d39058b38d2cf2523c3aaa302678d943def8e02a64df236a53632fd8e16f9ff9cc3bc7609f48b7be693fae9b38bf29eae6527809a2bca0bd0fd7cb098488113107221e5c8f49aaecafb5db1713142d7210\n",
+			"url": "http://dev-api.mydomain.com/jsconf3/hello?email=team@soajs.org&access_token=123",
+			"preRequestScript": null,
+			"pathVariables": {},
+			"method": "GET",
+			"data": null,
+			"dataMode": "params",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1460803224511,
+			"name": "Success s2 - Tenant 2",
+			"description": "",
+			"collectionId": "b98980be-39c1-f741-3dba-742a3c8e9028",
+			"responses": []
+		}
+	]
+}
