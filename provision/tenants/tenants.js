@@ -144,6 +144,12 @@ var tenants = [
 								"device": {},
 								"geo": {},
 								"env": "DASHBOARD"
+							},
+							{
+								"extKey": "d1e3b418bb1a18f35954c590d0cf06ff2d9e1f0b46b5c7d540f038efcde4430862a4ef9f71e74d8d45401441397b1c0be7e765b13266d63f509de3cd72cff059d048b2957d4aff259340f0b14f60823631a39ee57ce242fada8ee6741b594931",
+								"device": {},
+								"geo": {},
+								"env": "DEV"
 							}
 						],
 						"config": {
@@ -427,6 +433,12 @@ var tenants = [
 								"device": {},
 								"geo": {},
 								"env": "DASHBOARD"
+							},
+							{
+								"extKey": "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629",
+								"device": {},
+								"geo": {},
+								"env": "DEV"
 							}
 						],
 						"config": {
@@ -470,6 +482,12 @@ var tenants = [
 								"device": {},
 								"geo": {},
 								"env": "DASHBOARD"
+							},
+							{
+								"extKey": "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857",
+								"device": {},
+								"geo": {},
+								"env": "DEV"
 							}
 						],
 						"config": {
