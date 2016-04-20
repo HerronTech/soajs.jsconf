@@ -15,7 +15,7 @@
 	"requests": [
 		{
 			"id": "7ee36e58-5341-d3cc-588a-22db141d43e7",
-			"headers": "key: 4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857\nAuthorization: Basic NTcxMjAxMTAxZWJmMzQwNDFjMGIwNjI3b2F1dGhzZWNyZXQ=\n",
+			"headers": "key: 4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857\nAuthorization: Basic NTcxMjAxMTAxZWJmMzQwNDFjMGIwNjI3Om9hdXRoc2VjcmV0 \n",
 			"url": "http://dev-api.mydomain.com/oauth/token",
 			"preRequestScript": null,
 			"pathVariables": {},
@@ -45,7 +45,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1461096616355,
+			"time": 1461150771296,
 			"name": "Login oAuth - Tenant 2",
 			"description": "",
 			"collectionId": "b98980be-39c1-f741-3dba-742a3c8e9028",
@@ -73,7 +73,7 @@
 		{
 			"id": "9fa0d694-1865-b560-6d39-a3d34a93961d",
 			"headers": "key: 4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857\n",
-			"url": "http://dev-api.mydomain.com/jsconf3/hello?email=team@soajs.org&access_token=123",
+			"url": "http://dev-api.mydomain.com/jsconf3/hello?email=team@soajs.org&access_token=b383dc0d9626287934dd6af4475a5b4513493145",
 			"preRequestScript": null,
 			"pathVariables": {},
 			"method": "GET",
@@ -83,7 +83,7 @@
 			"tests": null,
 			"currentHelper": "normal",
 			"helperAttributes": {},
-			"time": 1461096621973,
+			"time": 1461150779942,
 			"name": "Success s2 - Tenant 2",
 			"description": "",
 			"collectionId": "b98980be-39c1-f741-3dba-742a3c8e9028",
