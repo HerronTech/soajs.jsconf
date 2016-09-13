@@ -25,6 +25,7 @@ jsconfSRV.init(function () {
 			 */
 			req.soajs.log.debug("Creating new DB connection to users database.");
 			var dbConfiguration = req.soajs.registry.coreDB.myDatabase;
+			console.log (dbConfiguration);
 			myMongo = new soajs.mongo(dbConfiguration);
 		}
 		else{
