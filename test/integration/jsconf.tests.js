@@ -57,7 +57,7 @@ describe("testing jsconf services", function () {
 		it("fails since no tenant key is provided", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://127.0.0.1:4000/jsconf2/hello?email=team@soajs.org',
+				uri: 'http:///jsconf2/hello?email=team@soajs.org',
 				body: null,
 				form: null
 			}, function (err, body) {
@@ -71,7 +71,7 @@ describe("testing jsconf services", function () {
 		it("passes since tenant key is now provided", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://dev-api.mydomain.com/jsconf2/hello?email=team@soajs.org',
+				uri: 'http://127.0.0.1:4000/jsconf2/hello?email=team@soajs.org',
 				headers: {key: "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
 				body: null,
 				form: null
@@ -86,7 +86,7 @@ describe("testing jsconf services", function () {
 		it("passes since tenant key is present and all input is valid", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf2/standalone/add',
+				uri: 'http://127.0.0.1:4000/jsconf2/standalone/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"name": "Mike Hajj",
@@ -110,7 +110,7 @@ describe("testing jsconf services", function () {
 		it("fails since duplicate data is in body", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf2/standalone/add',
+				uri: 'http://127.0.0.1:4000/jsconf2/standalone/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"name": "Mike Hajj",
@@ -141,7 +141,7 @@ describe("testing jsconf services", function () {
 		it("fails since no access token is present", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://dev-api.mydomain.com/jsconf3/hello?email=team@soajs.org',
+				uri: 'http://127.0.0.1:4000/jsconf3/hello?email=team@soajs.org',
 				headers: {key: "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
 				body: null,
 				form: null
@@ -156,7 +156,7 @@ describe("testing jsconf services", function () {
 		it("passes, providing us with the access token", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/oauth/token',
+				uri: 'http://127.0.0.1:4000/oauth/token',
 				headers: {
 					key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857",
 					Authorization: "Basic NTcxMjAxMTAxZWJmMzQwNDFjMGIwNjI3Om9hdXRoc2VjcmV0"
@@ -178,7 +178,7 @@ describe("testing jsconf services", function () {
 		it("passes since access token is now present", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://dev-api.mydomain.com/jsconf3/hello?email=team@soajs.org&access_token=' + access_token,
+				uri: 'http://127.0.0.1:4000/jsconf3/hello?email=team@soajs.org&access_token=' + access_token,
 				headers: {key: "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
 				body: null,
 				form: null
@@ -193,7 +193,7 @@ describe("testing jsconf services", function () {
 		it("passes since tenant key is present and all input is valid", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf3/standalone/add',
+				uri: 'http://127.0.0.1:4000/jsconf3/standalone/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"name": "Mike Hajj",
@@ -218,7 +218,7 @@ describe("testing jsconf services", function () {
 		it("fails since duplicate data is in body", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf3/standalone/add',
+				uri: 'http://127.0.0.1:4000/jsconf3/standalone/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"name": "Mike Hajj",
@@ -250,7 +250,7 @@ describe("testing jsconf services", function () {
 		it("passes with key of tenant 1", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/multi/add',
+				uri: 'http://127.0.0.1:4000/jsconf4/multi/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"username": "mike",
@@ -273,7 +273,7 @@ describe("testing jsconf services", function () {
 		it("passes with key of tenant 2", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/multi/add',
+				uri: 'http://127.0.0.1:4000/jsconf4/multi/add',
 				headers: {key: "d1e3b418bb1a18f35954c590d0cf06ff2c255e7ba90b415f0dd0e6c426577a34f5faf726ddea8c4325f4b287f8915b8d82ec5f6af74c4f30fc9b295bc80edd8143ed046dafb0b66727eb6e7b55680dea1b5995fec3d14b6d03f7acbc5e78b87e"},
 				body: {
 					"username": "mike",
@@ -296,7 +296,7 @@ describe("testing jsconf services", function () {
 		it("passes, returns message", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/hybrid',
+				uri: 'http://127.0.0.1:4000/jsconf4/hybrid',
 				headers: {key: "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
 				body: null,
 				form: null
@@ -311,7 +311,7 @@ describe("testing jsconf services", function () {
 		it("passes, returns name of user", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/hybrid',
+				uri: 'http://127.0.0.1:4000/jsconf4/hybrid',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: null,
 				form: null
@@ -326,7 +326,7 @@ describe("testing jsconf services", function () {
 		it("passes, returns name of user and email", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/hybrid',
+				uri: 'http://127.0.0.1:4000/jsconf4/hybrid',
 				headers: {key: "d1e3b418bb1a18f35954c590d0cf06ff2c255e7ba90b415f0dd0e6c426577a34f5faf726ddea8c4325f4b287f8915b8d82ec5f6af74c4f30fc9b295bc80edd8143ed046dafb0b66727eb6e7b55680dea1b5995fec3d14b6d03f7acbc5e78b87e"},
 				body: null,
 				form: null
@@ -342,7 +342,7 @@ describe("testing jsconf services", function () {
 		it("passes since tenant key is present and all input is valid", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/standalone/add',
+				uri: 'http://127.0.0.1:4000/jsconf4/standalone/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"name": "Mike Hajj",
@@ -366,7 +366,7 @@ describe("testing jsconf services", function () {
 		it("fails since duplicate data is in body", function (done) {
 			
 			helper.requester("post", {
-				uri: 'http://dev-api.mydomain.com/jsconf4/standalone/add',
+				uri: 'http://127.0.0.1:4000/jsconf4/standalone/add',
 				headers: {key: "4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
 				body: {
 					"name": "Mike Hajj",
