@@ -23,7 +23,7 @@ jsconfSRV.init(function () {
 			/**
 			 * Initializing DB Connection
 			 */
-			req.soajs.log.debug("Creating new DB connection to users database.");
+			req.soajs.log.debug("Creating new DB connection to 'myDatabase' database.");
 			var dbConfiguration = req.soajs.registry.coreDB.myDatabase;
 			myMongo = new soajs.mongo(dbConfiguration);
 		}
@@ -34,7 +34,7 @@ jsconfSRV.init(function () {
 		/**
 		 * Formulating Document to insert
 		 */
-		req.soajs.log.debug("Formulating new record: " + JSON.stringify(req.soajs.data));
+		req.soajs.log.debug("Formulating new record: " + JSON.stringify(req.soajs.inputmaskData));
 		var record = {
 			'username': req.soajs.inputmaskData.username,
 			'name': req.soajs.inputmaskData.name,
