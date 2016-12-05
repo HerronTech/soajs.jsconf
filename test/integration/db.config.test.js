@@ -2,7 +2,7 @@
 
 module.exports = function() {
 	return {
-		"name": '',
+		"name": 'myDatabase',
 		"prefix": "jsconf_",
 		"servers": [
 			{

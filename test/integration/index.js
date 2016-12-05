@@ -1,18 +1,27 @@
 "use strict";
 var helper = require("../helper.js");
-var service;
+var controller, oauth, s1, s2, s3, s4;
 
-describe("Initialize & start controller and service", function () {
+describe("Initialize & start controller, oauth, s1, s2, s3, and s4", function () {
 	
 	before(function (done) {
 		done();
 	});
 	
 	it("Starting Integration tests ...", function (done) {
-		service = helper.requireModule('./index.js');
+		
+		controller = require('../../../soajs.controller/index.js');
+		
 		setTimeout(function () {
-			require("./jsconf.tests.js");
-			done();
-		}, 1000);
+			oauth = require('../../../soajs.oauth/index.js');
+			s1 = helper.requireModule('services/s1/index.js');
+			s2 = helper.requireModule('services/s2/index.js');
+			s3 = helper.requireModule('services/s3/index.js');
+			s4 = helper.requireModule('services/s4/index.js');
+			setTimeout(function () {
+				require("./jsconf.tests.js");
+				done();
+			}, 5000);
+		}, 5000);
 	});
 });
