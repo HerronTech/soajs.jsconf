@@ -21,6 +21,8 @@
     "soajs": "0.4.*"
   },
   "devDependencies": {
+    "soajs.controller": "0.2.*",
+    "soajs.oauth": "0.3.*",
     "grunt":"0.4.5",
     "grunt-contrib-jshint":"*",
     "grunt-jsdoc" : "*",
