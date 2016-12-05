@@ -236,6 +236,91 @@ describe("Testing hello in S3 again", function() {
 	});
 });
 
+describe("Testing /standalone/add in S3", function() {
+	it("fails since input key email is not in imfv", function (done) {
+		
+		helper.requester("post", {
+			uri: 'http://dev-api.mydomain.com/jsconf3/standalone/add',
+			headers:{key:"9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
+			body: {
+				"name": "Mike Hajj",
+				"username": "mike",
+				"email":[
+					{
+						"email": "team@soajs.org",
+						"primary": true
+					}
+				]
+			},
+			form: null,
+			qs: {access_token: access_token}
+		}, function (err, body) {
+			assert.ifError(err);
+			assert.equal(body.result,false);
+			assert.equal(body.errors.details[0].message, "Error occurred while redirecting your request to the service");
+			done();
+		});
+	});
+});
+
+describe("Testing /standalone/add in S3 again", function() {
+	it("passes since tenant key is present and all input is valid", function (done) {
+		
+		helper.requester("post", {
+			uri: 'http://dev-api.mydomain.com/jsconf3/standalone/add',
+			headers:{key:"4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
+			body: {
+				"name": "Mike Hajj",
+				"username": "mike",
+				"email":[
+					{
+						"address": "team@soajs.org",
+						"primary": true
+					}
+				]
+			},
+			form: null,
+			qs: {access_token: access_token}
+		}, function (err, body) {
+			assert.ifError(err);
+			assert.equal(body.result,true);
+			assert.equal(body.data, true);
+			done();
+		});
+	});
+});
+
+describe("Testing /standalone/add in S3 once again", function() {
+	it("fails since duplicate data is in body", function (done) {
+		
+		helper.requester("post", {
+			uri: 'http://dev-api.mydomain.com/jsconf3/standalone/add',
+			headers:{key:"4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
+			body: {
+				"name": "Mike Hajj",
+				"username": "mike",
+				"email":[
+					{
+						"address": "team@soajs.org",
+						"primary": true
+					},
+					{
+						"address": "team@soajs.org",
+						"primary": true
+					}
+				]
+			},
+			form: null,
+			qs: {access_token: access_token}
+		}, function (err, body) {
+			assert.ifError(err);
+			assert.equal(body.result,false);
+			assert.equal(body.errors.details[0].message, "Validation failed for field: email -> The parameter 'email' failed due to: instance contains duplicate item");
+			done();
+		});
+	});
+});
+
 
 
 
@@ -338,6 +423,87 @@ describe("Testing /hybrid in S4", function() {
 			assert.equal(body.result,true);
 			assert.equal(body.data.name, "mike");
 			assert.equal(body.data.email, "team@soajs.org");
+			done();
+		});
+	});
+});
+
+describe("Testing /standalone/add in S4", function() {
+	it("fails since input key email is not in imfv", function (done) {
+		
+		helper.requester("post", {
+			uri: 'http://dev-api.mydomain.com/jsconf4/standalone/add',
+			headers:{key:"9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
+			body: {
+				"name": "Mike Hajj",
+				"username": "mike",
+				"email":[
+					{
+						"email": "team@soajs.org",
+						"primary": true
+					}
+				]
+			},
+			form: null
+		}, function (err, body) {
+			assert.ifError(err);
+			assert.equal(body.result,false);
+			assert.equal(body.errors.details[0].message, "Error occurred while redirecting your request to the service");
+			done();
+		});
+	});
+});
+describe("Testing /standalone/add in S4 again", function() {
+	it("passes since tenant key is present and all input is valid", function (done) {
+		
+		helper.requester("post", {
+			uri: 'http://dev-api.mydomain.com/jsconf4/standalone/add',
+			headers:{key:"4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
+			body: {
+				"name": "Mike Hajj",
+				"username": "mike",
+				"email":[
+					{
+						"address": "team@soajs.org",
+						"primary": true
+					}
+				]
+			},
+			form: null
+		}, function (err, body) {
+			assert.ifError(err);
+			assert.equal(body.result,true);
+			assert.equal(body.data, true);
+			done();
+		});
+	});
+});
+
+describe("Testing /standalone/add in S4 once again", function() {
+	it("fails since duplicate data is in body", function (done) {
+		
+		helper.requester("post", {
+			uri: 'http://dev-api.mydomain.com/jsconf4/standalone/add',
+			headers:{key:"4f9b4dbc4c8178a3983b8c0d42cd42d30e63f910ac5e4e51843b542c34d1f6790eda4c8b425470cb71ad6eed58787f59d1b9d8abd9cb43ddc1086641779752348c436a5e6d79c74b2aa59feaf4ecf1db868c7f77383d33b30208c8e31729b857"},
+			body: {
+				"name": "Mike Hajj",
+				"username": "mike",
+				"email":[
+					{
+						"address": "team@soajs.org",
+						"primary": true
+					},
+					{
+						"address": "team@soajs.org",
+						"primary": true
+					}
+				]
+			},
+			form: null
+		}, function (err, body) {
+			assert.ifError(err);
+			assert.equal(body.result,false);
+			assert.equal(body.errors.details[0].message, "Validation failed for field: email -> The parameter 'email' failed due to: instance contains duplicate item");
 			done();
 		});
 	});
