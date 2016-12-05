@@ -56,9 +56,6 @@ describe("Testing hello in S1 with override", function() {
 	});
 });
 
-
-
-
 //S2
 
 describe("Testing hello in S2", function() {
@@ -71,7 +68,7 @@ describe("Testing hello in S2", function() {
 		}, function (err, body) {
 			assert.ifError(err);
 			assert.equal(body.result,false);
-			assert.equal(body.errors.details[0].message, "A valid key is needed to access any API.");
+			assert.ok(body.errors);
 			done();
 		});
 	});
@@ -89,32 +86,6 @@ describe("Testing hello in S2 again", function() {
 			assert.ifError(err);
 			assert.equal(body.result,true);
 			assert.equal(body.data, "John Doe \<team@soajs.org> ");
-			done();
-		});
-	});
-});
-
-describe("Testing /standalone/add in S2", function() {
-	it("fails since input key email is not in imfv", function (done) {
-		
-		helper.requester("post", {
-			uri: 'http://dev-api.mydomain.com/jsconf2/standalone/add',
-			headers:{key:"9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
-			body: {
-				"name": "Mike Hajj",
-				"username": "mike",
-				"email":[
-					{
-						"email": "team@soajs.org",
-						"primary": true
-					}
-				]
-			},
-			form: null
-		}, function (err, body) {
-			assert.ifError(err);
-			assert.equal(body.result,false);
-			assert.equal(body.errors.details[0].message, "Error occurred while redirecting your request to the service");
 			done();
 		});
 	});
@@ -176,8 +147,6 @@ describe("Testing /standalone/add in S2 once again", function() {
 	});
 });
 
-
-
 //S3
 
 describe("Testing hello in S3", function() {
@@ -191,7 +160,7 @@ describe("Testing hello in S3", function() {
 		}, function (err, body) {
 			assert.ifError(err);
 			assert.equal(body.result,false);
-			assert.equal(body.errors.details[0].message, "Error occurred while redirecting your request to the service");
+			assert.ok(body.errors);
 			done();
 		});
 	});
@@ -231,33 +200,6 @@ describe("Testing hello in S3 again", function() {
 			assert.ifError(err);
 			assert.equal(body.result,true);
 			assert.equal(body.data, "John Doe \<team@soajs.org> ");
-			done();
-		});
-	});
-});
-
-describe("Testing /standalone/add in S3", function() {
-	it("fails since input key email is not in imfv", function (done) {
-		
-		helper.requester("post", {
-			uri: 'http://dev-api.mydomain.com/jsconf3/standalone/add',
-			headers:{key:"9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
-			body: {
-				"name": "Mike Hajj",
-				"username": "mike",
-				"email":[
-					{
-						"email": "team@soajs.org",
-						"primary": true
-					}
-				]
-			},
-			form: null,
-			qs: {access_token: access_token}
-		}, function (err, body) {
-			assert.ifError(err);
-			assert.equal(body.result,false);
-			assert.equal(body.errors.details[0].message, "Error occurred while redirecting your request to the service");
 			done();
 		});
 	});
@@ -320,9 +262,6 @@ describe("Testing /standalone/add in S3 once again", function() {
 		});
 	});
 });
-
-
-
 
 //S4
 
@@ -428,31 +367,6 @@ describe("Testing /hybrid in S4", function() {
 	});
 });
 
-describe("Testing /standalone/add in S4", function() {
-	it("fails since input key email is not in imfv", function (done) {
-		
-		helper.requester("post", {
-			uri: 'http://dev-api.mydomain.com/jsconf4/standalone/add',
-			headers:{key:"9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
-			body: {
-				"name": "Mike Hajj",
-				"username": "mike",
-				"email":[
-					{
-						"email": "team@soajs.org",
-						"primary": true
-					}
-				]
-			},
-			form: null
-		}, function (err, body) {
-			assert.ifError(err);
-			assert.equal(body.result,false);
-			assert.equal(body.errors.details[0].message, "Error occurred while redirecting your request to the service");
-			done();
-		});
-	});
-});
 describe("Testing /standalone/add in S4 again", function() {
 	it("passes since tenant key is present and all input is valid", function (done) {
 		

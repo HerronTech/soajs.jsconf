@@ -98,6 +98,7 @@ module.exports = function (grunt) {
 			coverage: {
 				SOAJS_TEST: true,
 				SOAJS_ENV: "dev",
+				SOAJS_SRVIP: "127.0.0.1",
 				APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/'
 			},
 			jsconf: {
