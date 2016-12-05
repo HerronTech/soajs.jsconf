@@ -88,7 +88,7 @@ module.exports = function (grunt) {
         },
         jsdoc: {
             dist: {
-                src: ['index.js', 'config.js', 'lib/*.js', 'model/*.js'],
+                src: ['config.js', 'services/**/*.js'],
                 options: {
                     destination: 'doc'
                 }
@@ -112,7 +112,7 @@ module.exports = function (grunt) {
         },
 
         instrument: {
-            files: ['config.js', 'services/s1/*.js', 'services/s2/*.js', 'services/s3/*.js', 'services/s4/*.js'],
+            files: ['config.js', 'services/**/*.js'],
             options: {
                 lazy: false,
                 basePath: 'test/coverage/instrument/'

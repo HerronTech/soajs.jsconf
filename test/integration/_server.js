@@ -1,13 +1,13 @@
 "use strict";
 var assert = require('assert');
 var shell = require('shelljs');
-var utilities = require("soajs.utilities/loc.js");
+var utilities = require("soajs.mongodb.data/modules/jsconf/");
 
 describe("importing sample data", function () {
 	
 	it("do import", function (done) {
 		shell.pushd(utilities.dir);
-		process.env.SOAJS_PROFILE = utilities.dir + "/data/jsconf/profile.js";
+		process.env.SOAJS_PROFILE = utilities.dir + "/profile.js";
 		
 		shell.exec("node index.js -f jsconf", function (code) {
 			assert.equal(code, 0);
