@@ -57,7 +57,7 @@ describe("testing jsconf services", function () {
 		it("fails since no tenant key is provided", function (done) {
 			
 			helper.requester("get", {
-				uri: 'http:///jsconf2/hello?email=team@soajs.org',
+				uri: 'http://127.0.0.1:4000/jsconf2/hello?email=team@soajs.org',
 				body: null,
 				form: null
 			}, function (err, body) {
