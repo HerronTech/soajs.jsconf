@@ -10,10 +10,10 @@ describe("Initialize & start controller, oauth, s1, s2, s3, and s4", function ()
 	
 	it("Starting Integration tests ...", function (done) {
 		
-		controller = require('../../../soajs.controller/index.js');
+		controller = require('soajs.controller');
 		
 		setTimeout(function () {
-			oauth = require('../../../soajs.oauth/index.js');
+			oauth = require('soajs.oauth');
 			s1 = helper.requireModule('services/s1/index.js');
 			s2 = helper.requireModule('services/s2/index.js');
 			s3 = helper.requireModule('services/s3/index.js');

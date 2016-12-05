@@ -9,7 +9,7 @@ describe("importing sample data", function () {
 		shell.pushd(utilities.dir);
 		process.env.SOAJS_PROFILE = utilities.dir + "/profile.js";
 		
-		shell.exec("node index.js -f jsconf", function (code) {
+		shell.exec("mongo data.js", function (code) {
 			assert.equal(code, 0);
 			shell.popd();
 			done();
