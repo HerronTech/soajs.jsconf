@@ -138,21 +138,20 @@ describe("testing jsconf services", function () {
 
 	//S3
 	describe("Testing hello in S3", function () {
-		// it("fails since no access token is present", function (done) {
-		//
-		// 	helper.requester("get", {
-		// 		uri: 'http://127.0.0.1:4000/jsconf3/hello?email=team@soajs.org',
-		// 		headers: {key: "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
-		// 		body: null,
-		// 		form: null
-		// 	}, function (err, body) {
-		// 		console.log(body);
-		// 		assert.ifError(err);
-		// 		assert.equal(body.result, false);
-		// 		assert.ok(body.errors);
-		// 		done();
-		// 	});
-		// });
+		it("fails since no access token is present", function (done) {
+
+			helper.requester("get", {
+				uri: 'http://127.0.0.1:4000/jsconf3/hello?email=team@soajs.org',
+				headers: {key: "9ee308d7b67d2e58a8770b99c8c0320c8d7262a72fc9516e09395bfa39f91b95190bfde9986f4e902ad5ba9de35573dbc5d087c1699c36632c1fccb91663c77529f633c8247366074d399ab326bfdeaa7211ce8c63b968c73cea7aab46296629"},
+				body: null,
+				form: null
+			}, function (err, body) {
+				assert.ifError(err);
+				assert.equal(body.result, false);
+				assert.ok(body.errors);
+				done();
+			});
+		});
 		
 		it("passes, providing us with the access token", function (done) {
 			
