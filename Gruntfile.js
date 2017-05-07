@@ -104,8 +104,7 @@ module.exports = function (grunt) {
 			jsconf: {
 				// SOAJS_TEST: true,
 				SOAJS_ENV: "dev",
-				APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/',
-				SOAJS_PROFILE: "/opt/soajs/node_modules/soajs.utilities/data/jsconf/profile.js"
+				APP_DIR_FOR_CODE_COVERAGE: '../test/coverage/instrument/'
 			}
 		},
 		
