@@ -13,6 +13,7 @@ module.exports = {
     requestTimeout: 30,
     requestTimeoutRenewal: 5,
     extKeyRequired: false,
+	oauth: false,
     "errors": {},
     "schema": {
         "/hello": {
