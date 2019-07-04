@@ -12,13 +12,16 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "test": "*"
+    "test": "*",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "engines": {
     "node": "*"
   },
   "dependencies": {
-    "soajs": "1.0.*"
+    "soajs": "1.0.*",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "grunt": "0.4.5",
@@ -34,7 +37,8 @@
     "mocha": "3.2.0",
     "shelljs": "0.7.5",
     "soajs.controller": "1.0.*",
-    "soajs.mongodb.data" : "1.0.*",
+    "soajs.mongodb.data": "1.0.*",
     "soajs.oauth": "1.0.*"
-  }
+  },
+  "snyk": true
 }
